@@ -5,12 +5,12 @@
 #define MEMORY_SIZE 1024
 #define PC_COUNTER_INIT 0
 
-void push() 
+void load() 
 {
 
 }
 
-void pop() 
+void sto() 
 {
 
 }
@@ -60,11 +60,11 @@ constexpr unsigned int hash(const char* str) {
 
 void executeInstruction(MIPSInstruction& instruction, MIPSCPU& cpu) {
     switch (hash(instruction.opcode)) {
-        case hash("PUSH"):
-            push();
+        case hash("LOAD"):
+            load();
             break;
-        case hash("POP"):
-            pop();
+        case hash("STO"):
+            sto();
             break;
         case hash("ADD"):
             add();
