@@ -4,7 +4,6 @@
 #include "memory.hpp"
 
 #define NUM_REGISTERS 32
-#define MEMORY_SIZE 1024
 #define PC_COUNTER_INIT 0
 
 void push() 
@@ -66,11 +65,7 @@ void executeInstruction(MIPSInstruction& instruction, MIPSCPU& cpu) {
 void execute()
 {
     MIPSCPU cpu;
-    MIPSInstruction* instruction;
-
-    while (true) {
-        scanf("%s", instruction);
-        executeInstruction(*instruction, cpu);
-    }
+    Memory memory;
+    memory.userDataPtr;
 
 }

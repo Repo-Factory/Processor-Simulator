@@ -21,7 +21,7 @@ main:
 
 	.data
 
-X:	.word 3
-A:	.word 7
-B:	.word 5
-C:	.word 4
+X: 3
+A: 7
+B: 5
+C: 4
