@@ -11,13 +11,13 @@ main:
 	lw $t3, C
 
  	; mul $t0, $t0, $t4  # X**2
-	mul $t4, $t0, $t0  # X**2
+	mul $t4, $t0, $t0  					# X**2, we want to store this into an unused regiester, $t4
  	; mul $t1, $t4, $t4  # A*X**2
-	mul $t4, $t1, $t4  # A*X**2
+	mul $t4, $t1, $t4  					# A*X**2
 	; mul $t0, $t2, $t5   # B*X
-	mul $t5, $t2, $t0   # B*X
+	mul $t5, $t2, $t0   				# B*X
 	add $t4, $t5, $t4  # A*X**2 + B*X
-	add $t4, $t4, $t3  # A*X**2 + B*X + C
+	add $t4, $t4, $t3  					# A*X**2 + B*X + C
 
 	la $a0, ans        # print a string
 	li $v0, 4

@@ -5,12 +5,12 @@
 #define MEMORY_SIZE 1024
 #define PC_COUNTER_INIT 0
 
-void push() 
+void load() 
 {
 
 }
 
-void pop() 
+void sto() 
 {
 
 }
@@ -43,11 +43,8 @@ struct MIPSInstruction {
 struct MIPSCPU {
     int registers[NUM_REGISTERS];
     int memory[MEMORY_SIZE];
-    int pc = PC_COUNTER_INIT;     // Program counter
-    int IF_ID; // Instruction fetched in IF stage
-    MIPSInstruction ID_EX; // Instruction decoded in ID stage
-    int EX_MEM; // Execution result in EX stage
-    int MEM_WB; // Memory access result in MEM stage
+    int pc = PC_COUNTER_INIT; 
+    MIPSInstruction curr_instruction;
 };
 
 constexpr unsigned int hash(const char* str) {
@@ -60,11 +57,11 @@ constexpr unsigned int hash(const char* str) {
 
 void executeInstruction(MIPSInstruction& instruction, MIPSCPU& cpu) {
     switch (hash(instruction.opcode)) {
-        case hash("PUSH"):
-            push();
+        case hash("load"):
+            load();
             break;
-        case hash("POP"):
-            pop();
+        case hash("sto"):
+            sto();
             break;
         case hash("ADD"):
             add();
