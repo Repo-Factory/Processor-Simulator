@@ -9,12 +9,11 @@
 #include <map>
 #include <regex>
 
+#define LABEL_REGEX_PATTERN "([A-Za-z][A-Za-z]*:)"
+#define INT_REGEX_PATTERN "[0-9]"
+
 namespace
 {
-    std::map<std::string, int32_t*> symbol_table;
-    std::regex labelRegex("([A-Za-z][A-Za-z]*:)");
-    std::regex integerRegex("[0-9]");
-
     std::ostream& operator<<(std::ostream& stream, std::map<std::string, int32_t*>& table)
     {
         for (const auto& [symbol, address] : table)
@@ -53,13 +52,24 @@ namespace
         return ascii;
     }
 
+    void debugPrint(Memory& memory)
+    {
+        for (int i = 0; i < 512; ++i) {
+            std::cout << "Memory[" << i << "]: " << int32ToAscii(*((int32_t*)&memory + i)) << std::endl;
+        }
+        for (int i = 0; i < 512; ++i) {
+            std::cout << "Memory[" << i << "]: " <<  *((int32_t*)&memory + i) << std::endl;
+        }
+        std::cout << memory.symbol_table;
+    }
+
     void handleWord(Memory& memory, std::string& word)
     { 
-        if (std::regex_match(word, labelRegex)) {
-            symbol_table.insert({word, memory.currentAddressPtr});
+        if (std::regex_match(word, std::regex(LABEL_REGEX_PATTERN))) {
+            memory.symbol_table.insert({word, memory.currentAddressPtr});
             return;
         }
-        if (std::regex_match(word, integerRegex)) {
+        if (std::regex_match(word, std::regex(INT_REGEX_PATTERN))) {
             writeContents(memory, std::stoi(word));
             memory.currentAddressPtr++;
             return;        
@@ -75,17 +85,17 @@ namespace
         writeContents(memory, stringToBitStream(word));
         memory.currentAddressPtr++;
     }
-}
 
-void iterateFile(Memory& memory, std::ifstream& sourceCode, std::string& word)
-{
-    while (!sourceCode.eof()) {
-        if (sourceCode.peek() == '#') {
-            std::getline(sourceCode, word);
-            continue;
+    void iterateFile(Memory& memory, std::ifstream& sourceCode, std::string& word)
+    {
+        while (!sourceCode.eof()) {
+            if (sourceCode.peek() == '#') {
+                std::getline(sourceCode, word);
+                continue;
+            }
+            sourceCode >> word;
+            handleWord(memory, word);
         }
-        sourceCode >> word;
-        handleWord(memory, word);
     }
 }
 
@@ -95,18 +105,9 @@ void load(Memory& memory, char* assemblyPath)
     handleFileError(sourceCode, assemblyPath);
     std::string word;
     iterateFile(memory, sourceCode, word);
+    debugPrint(memory);
     sourceCode.close();
 }  
 
-void debugPrint(Memory& memory)
-{
-    for (int i = 0; i < 512; ++i) {
-        std::cout << "Memory[" << i << "]: " << int32ToAscii( *((int32_t*)&memory + i)) << std::endl;
-    }
-    for (int i = 0; i < 512; ++i) {
-        std::cout << "Memory[" << i << "]: " <<  *((int32_t*)&memory + i) << std::endl;
-    }
-    std::cout << symbol_table;
-}
 
  

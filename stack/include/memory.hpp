@@ -1,5 +1,8 @@
 #pragma once
 #include <stdint.h>
+#include <map>
+#include <string>
+
 #define USER_TEXT_SIZE 128
 #define KERNEL_TEXT_SIZE  64
 #define USER_DATA_SIZE 128
@@ -18,6 +21,7 @@ struct Memory {
     int32_t* stackPtr = stack;
     int32_t* userDataPtr = userData;
     int32_t* currentAddressPtr = userText;
+    std::map<std::string, int32_t*> symbol_table;
 };
 
 int32_t getContents(Memory& memory);
