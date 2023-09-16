@@ -1,11 +1,11 @@
 #include "memory.hpp"
 
-int32_t getContents(Memory& memory)
+int32_t getContents(int32_t* address)
 {
-    return *memory.currentAddressPtr;
+    return *address;
 }
 
-void writeContents(Memory& memory, const int32_t data)
+void writeContents(int32_t* address, const int32_t data)
 {
-    *memory.currentAddressPtr = data;
+    *address = data;
 }

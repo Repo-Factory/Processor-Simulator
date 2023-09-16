@@ -9,7 +9,8 @@
 #define STACK_SIZE 128
 #define KERNEL_DATA_SIZE 64
 
-struct Memory {
+struct Memory 
+{
     int32_t userText[USER_TEXT_SIZE] = {0};
     int32_t kernelText[KERNEL_TEXT_SIZE] = {0};
     int32_t userData[USER_DATA_SIZE] = {0};
@@ -20,9 +21,8 @@ struct Memory {
     int32_t* kernelTextPtr = kernelText;
     int32_t* stackPtr = stack;
     int32_t* userDataPtr = userData;
-    int32_t* currentAddressPtr = userText;
     std::map<std::string, int32_t*> symbol_table;
 };
 
-int32_t getContents(Memory& memory);
-void writeContents(Memory& memory, int32_t data);
+int32_t getContents(int32_t* address);
+void writeContents(int32_t* address, int32_t data);

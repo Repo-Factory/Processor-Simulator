@@ -5,6 +5,10 @@ get_filename_component(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}" DIRECTORY)
 find_package(ament_cmake REQUIRED)
 set(CMAKE_CXX_STANDARD 20)
 
+if (NOT TARGET helpers)
+    add_subdirectory(${SRC_DIR}/helpers ${CMAKE_BINARY_DIR}/helpers-build)
+endif()
+
 # Add your package's source files
 add_executable(
     stack 
@@ -20,6 +24,11 @@ target_include_directories(
 )
 
 add_definitions(-DASSEMBLY_PATH="${SRC_DIR}/quadratic_stack.s")
+
+# Link gtest and other libraries to  executable
+target_link_libraries(stack
+  helpers
+)
 
 # Install the executable
 install(TARGETS stack
