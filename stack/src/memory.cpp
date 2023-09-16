@@ -1,6 +1,6 @@
 #include "memory.hpp"
 
-int32_t getContents(int32_t* address)
+int32_t readContents(int32_t* address)
 {
     return *address;
 }

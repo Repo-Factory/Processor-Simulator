@@ -1,10 +1,10 @@
 #include "debug_helpers.hpp"
 
-std::ostream& operator<<(std::ostream& stream, std::map<std::string, int32_t*>& table)
+std::ostream& operator<<(std::ostream& stream, std::map<int32_t, int32_t*>& table)
 {
     for (const auto& [symbol, address] : table)
     {
-        stream << symbol << " " << *address << std::endl;
+        stream << (char)symbol << " " << *address << std::endl;
     }
     return stream;
 }
@@ -21,10 +21,10 @@ std::string int32ToAscii(int32_t intValue)
 
 void debugPrint(Memory& memory)
 {
-    for (int i = 0; i < 512; ++i) {
+    for (int i = 0; i < 256; ++i) {
         std::cout << "Memory[" << i << "]: " << int32ToAscii(*((int32_t*)&memory + i)) << std::endl;
     }
-    for (int i = 0; i < 512; ++i) {
+    for (int i = 0; i < 256; ++i) {
         std::cout << "Memory[" << i << "]: " <<  *((int32_t*)&memory + i) << std::endl;
     }
     std::cout << memory.symbol_table;

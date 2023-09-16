@@ -32,7 +32,7 @@ void Loader::loadToMemory(Memory& memory, const std::string& word)
         this->currentAddressPtr = memory.userTextPtr;
 
     else if (std::regex_match(word, std::regex(LABEL_REGEX_PATTERN)))
-        memory.symbol_table.insert({word, this->currentAddressPtr});
+        memory.symbol_table.insert({labelToBitStream(word), this->currentAddressPtr});
 
     else if (std::regex_match(word, std::regex(INT_REGEX_PATTERN)))
         writeContents(this->currentAddressPtr++, std::stoi(word));
