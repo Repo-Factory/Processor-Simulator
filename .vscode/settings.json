@@ -68,5 +68,6 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "ranges": "cpp"
-    }
+    },
+    "debug.allowBreakpointsEverywhere": true,
 }
