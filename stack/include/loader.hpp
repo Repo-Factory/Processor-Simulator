@@ -7,5 +7,5 @@ class Loader
         void loadProgram(Memory& memory, char* assemblyPath);
         void loadToMemory(Memory& memory, const std::string& word);
     private:
-        int32_t* currentAddressPtr = 0x00;
+        int32_t* currentAddressPtr = nullptr;
 };

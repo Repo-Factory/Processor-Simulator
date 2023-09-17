@@ -70,4 +70,5 @@
         "ranges": "cpp"
     },
     "debug.allowBreakpointsEverywhere": true,
+    "C_Cpp.default.includePath": ["/home/robox/school/cs572/lab1/accumulator/include", ]
 }

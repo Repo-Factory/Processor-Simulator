@@ -4,7 +4,7 @@
 #include <memory>
 
 #ifndef ASSEMBLY_PATH
-    #define ASSEMBLY_PATH ""
+    #define ASSEMBLY_PATH "quadratic_stack.s"
 #endif
 
 #define FOREVER 1

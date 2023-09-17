@@ -1,12 +1,11 @@
-/* 
- * The third module (the "loader") will need some sort of file format to read from 
- * For source code files I'd suggest you use a layout similar to
- * MIPS assembly source files.  
- */
-
+#pragma once
 #include "memory.hpp"
 
-void load(memory& memory, char* file)
+class Loader
 {
-
-}
+    public:
+        void loadProgram(Memory& memory, char* assemblyPath);
+        void loadToMemory(Memory& memory, const std::string& word);
+    private:
+        int32_t* currentAddressPtr = nullptr;
+};

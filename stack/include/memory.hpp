@@ -25,4 +25,4 @@ struct Memory
 };
 
 int32_t readContents(int32_t* address);
-void writeContents(int32_t* address, int32_t data);
+void writeContents(int32_t* address, const int32_t data);

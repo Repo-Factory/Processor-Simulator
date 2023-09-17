@@ -16,7 +16,7 @@ main:
     MUL
     ADD 
     ADD  
-    POP  X
+    POP ANS
     END
 
 	.data
@@ -25,3 +25,4 @@ X: 3
 A: 7
 B: 5
 C: 4
+ANS: 0

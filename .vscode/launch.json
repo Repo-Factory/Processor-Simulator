@@ -9,7 +9,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/robox/school/cs572/lab1/install/stack/lib/stack/stack",
+            "program": "/home/robox/school/cs572/lab1/install/accumulator/lib/accumulator/accumulator",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

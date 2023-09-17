@@ -15,7 +15,8 @@ main:
     LOAD C 
     ADD  A 
     ADD  B 
-    STO  X
+    STO  ANS
+    END
       
 	.data
 
@@ -23,3 +24,4 @@ X: 3
 A: 7
 B: 5
 C: 4
+ANS: 0

@@ -5,11 +5,13 @@
 #define INIT_BIT_STREAM 0
 #define STRING_END_CHAR '\0'
 #define EIGHT_BITS 8
+#define NEXT_LETTER(word) (word + 1)
 
 int32_t labelToBitStream(const std::string& word);
 int32_t stringToBitStream(const std::string& word);
 
-constexpr int32_t computeBitStream(const char* str, int32_t bitStream = 0)
+// constexpr must be defined in header
+constexpr int32_t computeBitStream(const char* word, int32_t bitStream = 0)
 {
-    return (*str == STRING_END_CHAR) ? bitStream : computeBitStream(str + 1, (bitStream << EIGHT_BITS) | static_cast<int8_t>(*str));
-}
+    return *word == STRING_END_CHAR ? bitStream : computeBitStream(NEXT_LETTER(word), (bitStream << EIGHT_BITS) | static_cast<int8_t>(*word));
+}   // This function uses recursive method to compute bit stream at compile time

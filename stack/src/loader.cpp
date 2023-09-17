@@ -45,7 +45,9 @@ void Loader::loadProgram(Memory& memory, char* assemblyPath)
     std::ifstream sourceCode(assemblyPath);
     handleFileError(sourceCode, assemblyPath);
     iterateFile(this, memory, sourceCode);
-    debugPrint(memory);
+    #ifdef DEBUG
+        debugPrint(memory);
+    #endif
     sourceCode.close();
 }  
  

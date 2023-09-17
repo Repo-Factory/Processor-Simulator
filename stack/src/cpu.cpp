@@ -6,11 +6,13 @@
 #include "bit_operations.hpp"
 #include <iostream>
 
+constexpr const char* ANSWER_SYMBOL = "ANS";
 constexpr const char* PUSH_INSTRUCTION = "PUSH";
 constexpr const char* POP_INSTRUCTION = "POP";
 constexpr const char* ADD_INSTRUCTION = "ADD";
 constexpr const char* MULT_INSTRUCTION = "MUL";
 constexpr const char* END_INSTRUCTION = "END";
+constexpr int32_t ANSWER_BIT_STREAM = computeBitStream(ANSWER_SYMBOL);
 constexpr int32_t PUSH_INSTRUCTION_BIT_STREAM = computeBitStream(PUSH_INSTRUCTION);
 constexpr int32_t POP_INSTRUCTION_BIT_STREAM = computeBitStream(POP_INSTRUCTION);
 constexpr int32_t ADD_INSTRUCTION_BIT_STREAM = computeBitStream(ADD_INSTRUCTION);
@@ -62,6 +64,6 @@ void mult(MIPSCPU& cpu)
 
 void end(MIPSCPU& cpu) 
 {
-    std::cout << cpu.memory.symbol_table;
+    std::cout << "Quadratic Evaluation of Given Operands is " << readContents(cpu.memory.symbol_table[ANSWER_BIT_STREAM]) << "\n";
     exit(EXIT_SUCCESS);
 }

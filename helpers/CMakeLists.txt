@@ -16,7 +16,7 @@ add_library(
 target_include_directories(
     helpers PUBLIC 
     ${SRC_DIR}/helpers/include
-    ${SRC_DIR}/stack/include
+    ${SRC_DIR}/accumulator/include
 )
 
 # Install the executable
