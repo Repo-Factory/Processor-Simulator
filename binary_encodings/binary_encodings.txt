@@ -112,6 +112,8 @@
 
 
 
+
+
 /* Example of how stack code would break down to binary
 
 	.text
@@ -155,3 +157,14 @@
  * Then we have our stream of instructions.
  * Here in total we have 72 (decimal) bytes
  */
+
+
+
+Bytes in Original Assembly File
+-------------------------------
+
+Each instruction is 4 bytes
+We have 26 lines so we have 4 * 26 bytes
+
+-------------------------------
+104 bytes

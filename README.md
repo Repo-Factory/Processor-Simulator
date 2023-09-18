@@ -39,8 +39,9 @@ Red Id: 824769654
     - `CMakeLists.txt`                  - Build File which will generate make file to compile project  
     - `package.xml`                     - File to work with my preferred build/package manager for C++ (colcon/ROS2)  
 
-- `quadratic_eval.s`                    - Original assembly code given with corrections and comments  
+- `binary_encodings.pdf`                - Binary encodings electronic document in PDF format
 - `quadratic_accumulator.s`             - Assembly code rewritten in syntax understood by accumulator simulator  
+- `quadratic_eval.s`                    - Original assembly code given with corrections and comments  
 - `quadratic_stack.s`                   - Assembly code rewritten in syntax understood by stack simulator
 
 
@@ -64,3 +65,16 @@ This will build the program in the directory you're in (build).
 You can then execute with 
  
     ./stack
+
+## Usage ##
+This program will use the simulator to evaluate a simple quadratic AX^2 + BX + C
+Each simulator will have a path defined in its CMakeLists.txt which defines where to read for the assembly instructions
+Changing the values in the .data section of these files will change the operands for the quadratic evaluation.
+The program will not have to be compiled again, you can simply change the operands, execute the program and the simulator will 
+always correctly evaluate the expression. 
+
+## Design Notes ##
+Some difficult areas were loading the program into memory and representing the instructions as bit streams. However,
+doing so in this way made comparisons very easy. Also designing a way for the symbols to be dynamic required some
+creativity. I ended up not using any symbols directly but rather noting the memory address they're stored at so the
+instructions can make use of them later
