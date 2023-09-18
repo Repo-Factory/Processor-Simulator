@@ -5,7 +5,6 @@
  *  
  */
 
-
 #include "loader.hpp"
 #include "debug_helpers.hpp"
 #include "bit_operations.hpp"
