@@ -5,7 +5,7 @@
 #include <regex>
 
 #define LABEL_REGEX_PATTERN "([A-Za-z][A-Za-z]*:)"
-#define INT_REGEX_PATTERN "[0-9]"
+#define INT_REGEX_PATTERN "[0-9]*"
 #define DATA_SECTION_IDENTIFIER ".data"
 #define TEXT_SECTION_IDENTIFIER ".text"
 #define COMMENT_IDENTIFIER '#'
