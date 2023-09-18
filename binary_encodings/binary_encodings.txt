@@ -21,6 +21,7 @@
  * LIMM 00000101 | 24-bit immediate field
  */
 
+
 /* ANALYSIS */
 /* 
  * To accomodate 140 instructions we need 8 bits for the opcode
@@ -31,6 +32,28 @@
  * From there we can specify a simple 16-bit offset immediate field 
  * We have two new instructions, PUSH IMMEDIATE (PIMM) and LOAD IMMEDIATE (LIMM) which have a 8 bit opcode and 24-bit immediate field
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Example of how accumulator code would break down to binary
@@ -53,6 +76,7 @@
         
         .data
 
+                                       Binary                  Hex
     A: 7                # 00000000000000000000000000000111 | 00000007
     B: 5                # 00000000000000000000000000000101 | 00000005
     X: 3                # 00000000000000000000000000000011 | 00000003               
@@ -75,11 +99,24 @@
  * Here in total we have 68 (decimal) bytes
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Example of how stack code would break down to binary
 
 	.text
 
-    main:                   OPCODE    Base   MULT    Address Offset
+    main:                   OPCODE    Base   MULT    Address Offset      Hex
         PUSH C           # 00000001 | 0001 | 0000 | 0000000000000003 | 01100003             
         PUSH B           # 00000001 | 0001 | 0000 | 0000000000000002 | 01100002
         PUSH X           # 00000001 | 0001 | 0000 | 0000000000000000 | 01100000
@@ -95,7 +132,7 @@
         END              # 00000000 | 0000 | 0000 | 0000000000000000 | 00000000
 
         .data
-
+                                        Binary                  Hex
     X: 3                 # 00000000000000000000000000000011 | 00000003 
     A: 7                 # 00000000000000000000000000000111 | 00000007
     B: 5                 # 00000000000000000000000000000101 | 00000005
