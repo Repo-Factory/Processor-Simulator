@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(accumulator)
 
 get_filename_component(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}" DIRECTORY)
-find_package(ament_cmake REQUIRED)
+# find_package(ament_cmake REQUIRED)
 set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
@@ -36,4 +36,4 @@ install(TARGETS accumulator
   DESTINATION lib/${PROJECT_NAME}
 )
 
-ament_package()
+# ament_package()
