@@ -10,6 +10,7 @@
  * - CPU
  * - Memory
  * - Loader
+ * - Helpers
  * See cpp file of each for more details in each respective area
  ******************************************************************************/
 
@@ -29,6 +30,6 @@ int main() {
     loader->loadProgram(cpu->memory, ASSEMBLY_PATH);             // defined in CMakeLists.txt   
     cpu->userMode = true;
     while (cpu->userMode) 
-        executeInstruction(*cpu);
+        executeInstruction(*cpu);                                // defined in cpu.cpp
     exit(EXIT_SUCCESS);
 }

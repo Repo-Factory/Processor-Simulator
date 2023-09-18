@@ -4,7 +4,7 @@
 <name>accumulator</name>
 <version>0.0.0</version>
 <description>Package for accumulator</description>
-<maintainer email="mechatronics.sdsu@gmail.com">Zix</maintainer>
+<maintainer email=""></maintainer>
 <license>MIT</license>
 
 <export>

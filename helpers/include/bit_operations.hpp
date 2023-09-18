@@ -11,7 +11,7 @@ int32_t labelToBitStream(const std::string& word);
 int32_t stringToBitStream(const std::string& word);
 
 // constexpr must be defined in header
-constexpr int32_t computeBitStream(const char* word, int32_t bitStream = 0)
+constexpr int32_t computeBitStream(const char* word, int32_t bitStream=INIT_BIT_STREAM)
 {
     /* If we reach the end of a word, we return the bitstream
      * Otherwise we use an OR mask to overlay the bits of the char into the int32_t bit stream and shift 8 bits to prepare for the next char

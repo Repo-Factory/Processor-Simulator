@@ -4,7 +4,7 @@
 <name>stack</name>
 <version>0.0.0</version>
 <description>Package for stack</description>
-<maintainer email="mechatronics.sdsu@gmail.com">Zix</maintainer>
+<maintainer email=""></maintainer>
 <license>MIT</license>
 
 <export>
