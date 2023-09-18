@@ -1,5 +1,5 @@
 #
-# Code to evaluate a quadratic
+# Code to evaluate a quadratic for stack based machine
 #
 
 	.text

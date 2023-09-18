@@ -1,3 +1,10 @@
+/*
+ *  @brief
+ *          CPU related functions to execute instructions
+ *
+ *  
+ */
+
 #include "stdio.h"
 #include "stdlib.h"
 #include "cpu.hpp"

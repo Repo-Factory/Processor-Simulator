@@ -1,3 +1,11 @@
+/*
+ *  @brief
+ *          Loads program into memory
+ *
+ *  
+ */
+
+
 #include "loader.hpp"
 #include "debug_helpers.hpp"
 #include "bit_operations.hpp"
