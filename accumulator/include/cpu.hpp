@@ -4,7 +4,7 @@
 #include "stdlib.h"
 #include "memory.hpp"
 
-struct MIPSCPU // CPU has memory and registers (in this case accumulator program counter) 
+struct MIPSCPU // CPU has memory and registers (in this case accumulator & program counter) 
 {
     Memory memory;
     bool userMode = false;

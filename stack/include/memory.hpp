@@ -25,7 +25,7 @@ struct Memory
     int32_t* kernelTextPtr = kernelText;
     int32_t* stackPtr = stack;
     int32_t* userDataPtr = userData;
-    std::map<int32_t, int32_t*> symbol_table;
+    std::map<int32_t, int32_t*> symbol_table;               // Map symbol bit stream to address
 };
 
 int32_t readContents(int32_t* address);
