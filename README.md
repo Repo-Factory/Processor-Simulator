@@ -47,7 +47,11 @@ Red Id: 824769654
 
 ## Compiling ##
 To compile I use a build system called colcon. If you don't have this build system you can still compile with the CMakeLists.txt
-For each simulator, you would have to go into the directory it is in. We'll use the stack as an example. Then follow these commands. 
+For each simulator, you would have to go into the directory it is in. We'll use the stack as an example. 
+
+    cd stack
+
+Then follow these commands. 
 
     mkdir build
     cd build
@@ -67,11 +71,13 @@ You can then execute with
     ./stack
 
 ## Usage ##
-This program will use the simulator to evaluate a simple quadratic AX^2 + BX + C
-Each simulator will have a path defined in its CMakeLists.txt which defines where to read for the assembly instructions
-Changing the values in the .data section of these files will change the operands for the quadratic evaluation.
-The program will not have to be compiled again, you can simply change the operands, execute the program and the simulator will 
-always correctly evaluate the expression. 
+This program will use the simulator to evaluate a simple quadratic AX^2 + BX + C.  
+Each simulator will have a path defined in its CMakeLists.txt which defines where to read for the assembly instructions.  
+Changing the values in the .data section of these files will change the operands for the quadratic evaluation.  
+The program will not have to be compiled again, you can simply change the operands, execute the program and the simulator will
+always correctly evaluate the expression.   
+So if you want to see the stack simulator calculate a new value, edit quadratic_stack.s  
+At the bottom there's a data section. Change any of the operands and reexecute the program (./stack) to see the output
 
 ## Design Notes ##
 Some difficult areas were loading the program into memory and representing the instructions as bit streams. However,

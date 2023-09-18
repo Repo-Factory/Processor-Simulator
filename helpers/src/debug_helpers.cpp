@@ -1,3 +1,5 @@
+/* These functions aren't called from program, they were used for troubleshooting purposes */
+
 #include "debug_helpers.hpp"
 
 std::ostream& operator<<(std::ostream& stream, std::map<int32_t, int32_t*>& table)

@@ -1,3 +1,5 @@
+/* Simple file handling functions that are mostly self explanatory. I didn't want this logic polluting the sim code. */
+
 #include <iostream>
 #include <fstream>
 #include <string>
