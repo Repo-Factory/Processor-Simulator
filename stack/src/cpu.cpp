@@ -86,5 +86,5 @@ void mult(MIPSCPU& cpu)
 void end(MIPSCPU& cpu) 
 {
     std::cout << "Quadratic Evaluation of Given Operands is " << readContents(cpu.memory.symbol_table[ANSWER_BIT_STREAM]) << "\n";
-    exit(EXIT_SUCCESS);
+    cpu.userMode = false;
 }

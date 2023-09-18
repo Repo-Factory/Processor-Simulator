@@ -10,7 +10,7 @@ if (NOT TARGET helpers)
     add_subdirectory(${SRC_DIR}/helpers ${CMAKE_BINARY_DIR}/helpers-build)
 endif()
 
-# Add your package's source files
+# Add package's source files
 add_executable(
     stack 
     ${SRC_DIR}/stack/src/cpu.cpp
@@ -26,7 +26,7 @@ target_include_directories(
 
 add_definitions(-DASSEMBLY_PATH="${SRC_DIR}/quadratic_stack.s")
 
-# Link gtest and other libraries to  executable
+# Link to helpers code
 target_link_libraries(stack
   helpers
 )

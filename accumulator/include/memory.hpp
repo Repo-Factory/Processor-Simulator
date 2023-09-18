@@ -8,6 +8,10 @@
 #define USER_DATA_SIZE 128
 #define KERNEL_DATA_SIZE 64
 
+/* Lays out 4 sections of memory
+ * Each section can be accessed by its corresponding pointer field
+ * Symbol table will map labels like C: to its corresponding address where the value is held
+ */
 struct Memory 
 {
     int32_t userText[USER_TEXT_SIZE] = {0};

@@ -7,6 +7,7 @@
 struct MIPSCPU  // CPU has memory and registers (in this case only program counter) 
 {
     Memory memory;
+    bool   userMode = false;
     int32_t* pc = memory.userTextPtr;    
 };
 
